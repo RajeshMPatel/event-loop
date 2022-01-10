@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		646CAAE2278CF6690038C1E1 /* LibMsgTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646CAAE1278CF6690038C1E1 /* LibMsgTask.cpp */; };
 		64EFA57C278BBC3600C45740 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64EFA57B278BBC3600C45740 /* main.cpp */; };
 		64EFA58A278BBD7700C45740 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64EFA586278BBD7700C45740 /* stdafx.cpp */; };
 		64EFA58F278BC07800C45740 /* LibMsgHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64EFA58E278BC07800C45740 /* LibMsgHandler.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		646CAAE0278CE5440038C1E1 /* LibMsgTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibMsgTask.h; sourceTree = "<group>"; };
+		646CAAE1278CF6690038C1E1 /* LibMsgTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibMsgTask.cpp; sourceTree = "<group>"; };
 		64EFA578278BBC3600C45740 /* LibMsg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LibMsg; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EFA57B278BBC3600C45740 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		64EFA585278BBD7700C45740 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		64EFA58C278BBD7F00C45740 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				646CAAE1278CF6690038C1E1 /* LibMsgTask.cpp */,
 				64EFA598278BD3D800C45740 /* TestMsgThread.cpp */,
 				64EFA591278BC43C00C45740 /* LibMsgThread.cpp */,
 				64EFA58E278BC07800C45740 /* LibMsgHandler.cpp */,
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				64EFA597278BD3D800C45740 /* TestMsgThread.h */,
+				646CAAE0278CE5440038C1E1 /* LibMsgTask.h */,
 				64EFA593278BC44800C45740 /* LibMsgThread.h */,
 				64EFA590278BC08000C45740 /* LibMsgHandler.h */,
 				64EFA589278BBD7700C45740 /* LibMsgDllExport.h */,
@@ -175,6 +180,7 @@
 				64EFA58A278BBD7700C45740 /* stdafx.cpp in Sources */,
 				64EFA57C278BBC3600C45740 /* main.cpp in Sources */,
 				64EFA58F278BC07800C45740 /* LibMsgHandler.cpp in Sources */,
+				646CAAE2278CF6690038C1E1 /* LibMsgTask.cpp in Sources */,
 				64EFA592278BC43C00C45740 /* LibMsgThread.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

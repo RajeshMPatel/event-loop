@@ -19,5 +19,9 @@ int main(int argc, const char * argv[]) {
   g_rMessageThread.Start();
   g_rMessageThread.PostMessage(cInitialize, 0, 0);
 
+  while (true) {
+    // Keep the main thread running
+    ;
+  }
   return 0;
 }
