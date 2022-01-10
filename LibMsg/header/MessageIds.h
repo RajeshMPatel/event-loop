@@ -12,6 +12,7 @@ enum
 {
   cInitialize,
   cCleanUp,
+  cDoSomethingTask,
 };
 
 #endif /* MessageIds_h */
