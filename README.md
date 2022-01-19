@@ -9,11 +9,19 @@ I have used [boost](https://www.boost.org/) C++ framework for the implementation
 ## Application
 Windows messaging system was very efficient. It could handle a very large number of messages coming in very fast such as `MOUSE_MOVE`. The interface was standard `OnMessage(WPARAM, LPARAM)` format. You would get to `PostMessage` or `SendMessage` with these two parameters. You could essentially send any pointer or a number as a part of the message. The PostMessage would queue the message. The messages would get serviced by the main Event Loop in the order they arrive. `PostMessage` would return right away and it was the responsibility of the receiver to free the memory. With C++ smart pointers, that burden is gone. Of course, smart pointers bring their own set of issues such as circular dependencies. `SendMessage` on the other hand would block until the message was served. The whole thing would run in a single thread. If you had something that required a good amount of processing, you had to spawn of a new thread. Otherwise, the UI would freeze.
 
-
 ![](https://i.imgur.com/s0pxEsD.png)
 
+The framework in this application, mirrors this Windows framework. You just add your `message` with an ID and you define its handler. The application successfully runs on both Windows and Mac. Most of the interface is abstracted out. That way you can focus on the core logic of the application. If you don't like the callback format, the great thing is that you can define your own. You can pass the typed data for example instead of WPARAM and LPARAM
 
-The framework in this application, mirrors this Windows framework. You could add your `message` with an ID and you define its handler. 
+The application demonstrates multiple different kinds of events
+- User Message - You can post your message (Here Initialize message)
+- Timers - You can create various kinds of timers. Periodic, One Time Timer. You can cancel the timer etc.
+- Network Change - You can get an event whenever the network changes. 
+- Registry Change - This of course applies only to Windows. You can use it to monitor Windows Application start location for the registry. That way if a malware modifies the entry, you will get a notification right away and take action
+
+The great thing is that all you need is to register either a file descritor (for Linux, Mac, iOS and Android) or HANDLE for Windows. You then add a callback or handler message along with MessageID to our Message Thread and Viola, you have a complete high performing single threaded asynchrnous event loop. I have not tried it but this application should run on iOS, Linux and Android as well. It currently works on Windows and Mac.
+
+
 
 ```
 // Ids for the messages
@@ -52,16 +60,8 @@ Thread id = 0x700003ae4000
 ==>OnInitialize. Time = 1641858231
 ==>OnDoSomethingTask. Time = 1641858236 - Task Fired to do something
 ==>OnDoSomethingTask. Time = 1641858241 - Task Fired to do something
+==>OnNetworkChanged.
 ==>OnDoSomethingTask. Time = 1641858246 - Task Fired to do something
 ==>OnDoSomethingTask. Time = 1641858251 - Task Fired to do something
 ```
-
-So far I only have user posted messages and Timers. However, it is not limited to user messages. You can easily add system events (such as file change, network events such as new socket, interface changed etc). The great thing is that all you need is to register either a file descritor (for Linux, Mac, iOS and Android) or HANDLE for Windows and then you add the handle to our Event Loop and Viola, you have a complete high performing single threaded asynchrnous event loop.
-
-
-
-
-
-
-
 
