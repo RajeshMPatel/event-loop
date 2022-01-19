@@ -16,6 +16,7 @@ BEGIN_LIBMSG_MAP(TestMsgThread, LibMsgThread)
   ON_MESSAGE(cInitialize, TestMsgThread::OnInitialize)
   ON_MESSAGE(cCleanUp, TestMsgThread::OnCleanUp)
   ON_MESSAGE(cDoSomethingTask, TestMsgThread::OnDoSomethingTask)
+  ON_MESSAGE(cNetworkChanged, TestMsgThread::OnNetworkChanged)
 END_LIBMSG_MAP()
 
 TestMsgThread::TestMsgThread() {
