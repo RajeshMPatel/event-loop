@@ -23,7 +23,7 @@ public:
   LibMsgDllExport virtual ~LibMsgEvent();
 
 protected:
-  virtual void    HandleEvent(const boost::system::error_code& error) = 0;
+  virtual void HandleEvent(const boost::system::error_code& error) = 0;
 };
 
 #endif // libmsg_event_h_
