@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6465CB0627978E4600E99571 /* LibMsgEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6465CB0527978E4600E99571 /* LibMsgEvent.cpp */; };
+		6465CB0A2797A03700E99571 /* LibMsgNetworkChange_mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6465CB092797A03700E99571 /* LibMsgNetworkChange_mac.cpp */; };
+		6465CB0F2797A39000E99571 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6465CB0B2797A36F00E99571 /* CoreFoundation.framework */; };
+		6465CB102797A39000E99571 /* CoreFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6465CB0B2797A36F00E99571 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6465CB122797A39600E99571 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6465CB0D2797A38200E99571 /* CoreServices.framework */; };
+		6465CB132797A39600E99571 /* CoreServices.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6465CB0D2797A38200E99571 /* CoreServices.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6465CB162797A46600E99571 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6465CB142797A45600E99571 /* SystemConfiguration.framework */; };
+		6465CB172797A46700E99571 /* SystemConfiguration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6465CB142797A45600E99571 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		646CAAE2278CF6690038C1E1 /* LibMsgTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 646CAAE1278CF6690038C1E1 /* LibMsgTask.cpp */; };
 		64EFA57C278BBC3600C45740 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64EFA57B278BBC3600C45740 /* main.cpp */; };
 		64EFA58A278BBD7700C45740 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64EFA586278BBD7700C45740 /* stdafx.cpp */; };
@@ -18,6 +25,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6465CB112797A39000E99571 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6465CB102797A39000E99571 /* CoreFoundation.framework in Embed Frameworks */,
+				6465CB172797A46700E99571 /* SystemConfiguration.framework in Embed Frameworks */,
+				6465CB132797A39600E99571 /* CoreServices.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64EFA576278BBC3600C45740 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,6 +52,11 @@
 /* Begin PBXFileReference section */
 		6465CB0427978E3500E99571 /* LibMsgEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibMsgEvent.h; sourceTree = "<group>"; };
 		6465CB0527978E4600E99571 /* LibMsgEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibMsgEvent.cpp; sourceTree = "<group>"; };
+		6465CB082797A02B00E99571 /* LibMsgNetworkChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibMsgNetworkChange.h; sourceTree = "<group>"; };
+		6465CB092797A03700E99571 /* LibMsgNetworkChange_mac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibMsgNetworkChange_mac.cpp; sourceTree = "<group>"; };
+		6465CB0B2797A36F00E99571 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		6465CB0D2797A38200E99571 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		6465CB142797A45600E99571 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		646CAAE0278CE5440038C1E1 /* LibMsgTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibMsgTask.h; sourceTree = "<group>"; };
 		646CAAE1278CF6690038C1E1 /* LibMsgTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LibMsgTask.cpp; sourceTree = "<group>"; };
 		64EFA578278BBC3600C45740 /* LibMsg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LibMsg; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +80,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				64EFA596278BD34E00C45740 /* libboost_thread-mt.a in Frameworks */,
+				6465CB122797A39600E99571 /* CoreServices.framework in Frameworks */,
+				6465CB162797A46600E99571 /* SystemConfiguration.framework in Frameworks */,
+				6465CB0F2797A39000E99571 /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +118,7 @@
 		64EFA58C278BBD7F00C45740 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				6465CB092797A03700E99571 /* LibMsgNetworkChange_mac.cpp */,
 				6465CB0527978E4600E99571 /* LibMsgEvent.cpp */,
 				646CAAE1278CF6690038C1E1 /* LibMsgTask.cpp */,
 				64EFA598278BD3D800C45740 /* TestMsgThread.cpp */,
@@ -104,6 +133,7 @@
 		64EFA58D278BBD9900C45740 /* header */ = {
 			isa = PBXGroup;
 			children = (
+				6465CB082797A02B00E99571 /* LibMsgNetworkChange.h */,
 				6465CB0427978E3500E99571 /* LibMsgEvent.h */,
 				64EFA597278BD3D800C45740 /* TestMsgThread.h */,
 				646CAAE0278CE5440038C1E1 /* LibMsgTask.h */,
@@ -119,6 +149,9 @@
 		64EFA594278BD34E00C45740 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6465CB142797A45600E99571 /* SystemConfiguration.framework */,
+				6465CB0D2797A38200E99571 /* CoreServices.framework */,
+				6465CB0B2797A36F00E99571 /* CoreFoundation.framework */,
 				64EFA595278BD34E00C45740 /* libboost_thread-mt.a */,
 			);
 			name = Frameworks;
@@ -134,6 +167,7 @@
 				64EFA574278BBC3600C45740 /* Sources */,
 				64EFA575278BBC3600C45740 /* Frameworks */,
 				64EFA576278BBC3600C45740 /* CopyFiles */,
+				6465CB112797A39000E99571 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,7 +193,7 @@
 				};
 			};
 			buildConfigurationList = 64EFA573278BBC3600C45740 /* Build configuration list for PBXProject "LibMsg" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -183,6 +217,7 @@
 			files = (
 				64EFA599278BD3D800C45740 /* TestMsgThread.cpp in Sources */,
 				6465CB0627978E4600E99571 /* LibMsgEvent.cpp in Sources */,
+				6465CB0A2797A03700E99571 /* LibMsgNetworkChange_mac.cpp in Sources */,
 				64EFA58A278BBD7700C45740 /* stdafx.cpp in Sources */,
 				64EFA57C278BBC3600C45740 /* main.cpp in Sources */,
 				64EFA58F278BC07800C45740 /* LibMsgHandler.cpp in Sources */,

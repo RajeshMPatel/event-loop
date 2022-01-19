@@ -13,6 +13,7 @@ enum
   cInitialize,
   cCleanUp,
   cDoSomethingTask,
+  cNetworkChanged,
 };
 
 #endif /* MessageIds_h */

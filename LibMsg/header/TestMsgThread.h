@@ -24,6 +24,7 @@ private:
   void OnInitialize(LM_WPARAM wParam, LM_LPARAM lParam);
   void OnCleanUp(LM_WPARAM wParam, LM_LPARAM lParam);
   void OnDoSomethingTask(LM_WPARAM wParam, LM_LPARAM lParam);
+  void OnNetworkChanged(LM_WPARAM wParam, LM_LPARAM lParam);
 };
 
 #endif /* Testmsgthread_h */
