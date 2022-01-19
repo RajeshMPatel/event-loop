@@ -29,6 +29,8 @@ enum
 {
   cInitialize,
   cCleanUp,
+  cDoSomethingTask,
+  cNetworkChanged,
 };
 
 
@@ -36,6 +38,8 @@ enum
 BEGIN_LIBMSG_MAP(TestMsgThread, LibMsgThread)
   ON_MESSAGE(cInitialize, TestMsgThread::OnInitialize)
   ON_MESSAGE(cCleanUp, TestMsgThread::OnCleanUp)
+  ON_MESSAGE(cDoSomethingTask, TestMsgThread::OnDoSomethingTask)
+  ON_MESSAGE(cNetworkChanged, TestMsgThread::OnNetworkChanged)
 END_LIBMSG_MAP()
 
 
@@ -48,6 +52,13 @@ void TestMsgThread::OnCleanUp(LM_WPARAM wParam, LM_LPARAM lParam) {
   std::cout << "==>OnCleanUp\n" << endl;
 }
 
+void TestMsgThread::OnDoSomethingTask(LM_WPARAM wParam, LM_LPARAM lParam) {
+  std::cout << "==>OnDoSomethingTask. Time = " << time(nullptr) << " - Task Fired to do something" << endl;
+}
+
+void TestMsgThread::OnNetworkChanged(LM_WPARAM wParam, LM_LPARAM lParam) {
+  std::cout << "==>OnNetworkChanged." << endl;
+}
 ```
 
 All functions follow the same signature. That is what allows us to do the BEGIN_LIBMSG_MAP trick. I could have easily extended this to handle more parameters. The trick is done using `boost::bind` and `boost::post`. You are welcome to explore the source code and post any questions.
@@ -56,12 +67,12 @@ The output from the program
 ```
 Welcome to the world of Asynchronous Programming!!
 ==>LibMsgThread::Start
-Thread id = 0x700003ae4000
-==>OnInitialize. Time = 1641858231
-==>OnDoSomethingTask. Time = 1641858236 - Task Fired to do something
-==>OnDoSomethingTask. Time = 1641858241 - Task Fired to do something
+Thread id = 0x70000e0bb000
+==>OnInitialize. Time = 1642568940
+==>OnDoSomethingTask. Time = 1642568945 - Task Fired to do something
+==>OnDoSomethingTask. Time = 1642568950 - Task Fired to do something
 ==>OnNetworkChanged.
-==>OnDoSomethingTask. Time = 1641858246 - Task Fired to do something
-==>OnDoSomethingTask. Time = 1641858251 - Task Fired to do something
+==>OnDoSomethingTask. Time = 1642568955 - Task Fired to do something
+==>OnDoSomethingTask. Time = 1642568960 - Task Fired to do something
 ```
 
