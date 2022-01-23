@@ -6,6 +6,8 @@ In the [previous article](https://hackmd.io/fQRXo1VsRcaFdvoMx7aBIw), I described
 
 I have used [boost](https://www.boost.org/) C++ framework for the implementation. There are other frameworks available for C/C++ as well. Most notably [libEvent](https://libevent.org/) and [ACE](https://github.com/psigen/ace). All these frameworks abstract out the operating system level implementations of `ePoll, kQueue or IOCP` and provide a uniform interface. Boost uses ASIO for this purpose. Boost is also a very rich library that has many additional utilties that are now getting incorporated in standard C++ library (including asio starting from C++ 17)
 
+I have also created a nodejs example of an event loop. You can browse it [here](https://github.com/RajeshMPatel/nodejs-event-loop)
+
 ## Application
 Windows messaging system was very efficient. It could handle a very large number of messages coming in very fast such as `MOUSE_MOVE`. The interface was standard `OnMessage(WPARAM, LPARAM)` format. You would get to `PostMessage` or `SendMessage` with these two parameters. You could essentially send any pointer or a number as a part of the message. The PostMessage would queue the message. The messages would get serviced by the main Event Loop in the order they arrive. `PostMessage` would return right away and it was the responsibility of the receiver to free the memory. With C++ smart pointers, that burden is gone. Of course, smart pointers bring their own set of issues such as circular dependencies. `SendMessage` on the other hand would block until the message was served. The whole thing would run in a single thread. If you had something that required a good amount of processing, you had to spawn of a new thread. Otherwise, the UI would freeze.
 
